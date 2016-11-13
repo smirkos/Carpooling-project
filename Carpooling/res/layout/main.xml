@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Layout per il login-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:facebook="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#368728" >
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+        <LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+            android:orientation="horizontal" android:gravity="center" android:visibility="gone">
+        <TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:textColor="#AFDEFE"
+				android:textSize="18sp"
+				android:typeface="serif"
+				android:textStyle="italic"
+				android:text="@string/titolo_app" android:visibility="visible"/>
+        </LinearLayout>
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:orientation="horizontal" android:layout_gravity="center" android:id="@+id/status_profile_container">
+        <com.facebook.widget.ProfilePictureView
+				android:id="@+id/selection_profile_pic"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+				facebook:preset_size="small"
+                android:layout_weight="0.1" android:layout_marginRight="5dp" android:layout_gravity="center"/>
+
+		<TextView
+			android:id="@+id/profile_name"
+			android:layout_width="wrap_content"
+			android:layout_height="20dp"
+			android:text="@string/descri_app"
+			android:textSize="17sp"
+			android:layout_gravity="center"
+			android:gravity="center_horizontal" android:lines="3" android:layout_weight="0.5"/>
+    </LinearLayout>
+
+        <ImageView
+                android:layout_width="200dp"
+                android:layout_height="140dp"
+                android:id="@+id/imageLogo" android:src="@drawable/logo_carpooling1" android:adjustViewBounds="false"
+                android:baselineAlignBottom="false" android:cropToPadding="false" android:focusable="false"
+                android:focusableInTouchMode="false" android:scaleType="fitXY" android:layout_gravity="center_horizontal|top"
+                android:minHeight="100dp" android:maxHeight="500dp" android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/main_ui_container"
+                android:visibility="visible">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtInfo_cerca" android:layout_gravity="center_horizontal"
+                    android:text="@string/label_button_request_name" android:visibility="gone"/>
+            <Button
+                    android:layout_width="300sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_request_name"
+                    android:id="@+id/btnSendRequest"
+                    android:layout_gravity="center" android:visibility="visible"
+                    android:layout_marginTop="3dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_button_publish"
+                    android:id="@+id/txtInfo_pubblica" android:layout_marginTop="8sp" android:layout_gravity="center_horizontal"
+                    android:visibility="gone"/>
+            <Button
+                    android:layout_width="300sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_publish"
+                    android:id="@+id/button_publish_post" android:layout_gravity="center" android:visibility="visible"
+                    android:layout_marginTop="3dp"/>
+        </LinearLayout>
+        <com.facebook.widget.LoginButton
+			android:id="@+id/buttonLoginLogout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="7dp"
+			android:layout_marginBottom="12dp"
+            facebook:confirm_logout="false"
+            facebook:fetch_user_info="true"/>
+
+    </LinearLayout>
+
+</ScrollView>

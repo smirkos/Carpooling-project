@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CarpoolingApp</string>
+    <string name="app_service">Servizio notifica passaggio disponibile</string>
+	<string name="app_id_facebook">549370771821285</string>
+    <string name="app_token">549370771821285|aRnwRMixxEnMqXwvimAQXuxfykI</string>
+    <string name="descri_app">Effettua il login per iniziare</string>
+	<string name="titolo_app">Benvenuto </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+	<string name="Icona">Icona</string>
+
+	<string name="ok">OK</string>
+	<string name="cancelled">Qualcosa e\' andato storto!</string>
+	<string name="permission_not_granted">Permesso non concesso.</string>
+	<string name="progress_dialog_text">attendere prego…</string>
+	<string name="result_dialog_text_default">Post completato.</string>
+	<string name="result_dialog_text_canceled">Post cancellato.</string>
+	<string name="result_dialog_button_text">Grazie!</string>
+	<string name="result_dialog_title">Risultato</string>
+	<string name="error_dialog_default_text">Nessuna risposta dal server.</string>
+	<string name="error_authentication_retry">Un errore richiede attenzione. %1$s</string>
+	<string name="error_authentication_reopen">Errore, per favore rifai il login.</string>
+	<string name="error_server">Il server è occupato, ritenta più tardi.</string>
+
+    <string name="label_button_publish">Inserisci il tuo viaggio.</string>
+    <string name="button_publish">Inserisci viaggio</string>
+    <string name="label_button_request_name">Cerca un passaggio da un utente.</string>
+    <string name="button_request_name">Cerca passaggio</string>
+
+    <string name="menu_save">Pubblica</string>
+	<string name="menu_cancel">Annulla</string>
+
+    <string name="contact_dialog_title">Contatta guidatore</string>
+    <string name="send_mess_title">Invia un messaggio</string>
+    <string name="txtInfo_selection_trip">Nessun viaggio trovato</string>
+    <string name="title_insertTrip_activity">Inserimento viaggio</string>
+    <string name="title_listTrip_activity">Lista viaggi</string>
+    <string name="errore_internet_connection_message">Connessione non attiva, per usare l\'app è neccessaria una
+        connessione a internet. L\'app verrà chiusa.</string>
+
+    <string name="mail_text">Ciao,\nMi puoi dare un passaggio? Se si, dove possiamo incontrarci? \nCordiali saluti\n</string>
+    <string name="mail_subject">Richiesta carpoolingApp da </string>
+    <string name="publishing_post">Il viaggio verrà pubblicato sul tuo profilo facebook.</string>
+
+</resources>

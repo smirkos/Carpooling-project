@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity" >
+
+    <group
+            android:id="@+id/group2"
+            android:checkableBehavior="none"
+            android:enabled="true"
+            android:menuCategory="container"
+            android:orderInCategory="2"
+            android:visible="true" >
+        <item
+                android:id="@+id/StartService_option_menu"
+                android:icon="@android:drawable/ic_media_play"
+                android:orderInCategory="1"
+                android:title="Start Service">
+        </item>
+        <item
+                android:id="@+id/StopService_option_menu"
+                android:icon="@android:drawable/ic_media_pause"
+                android:orderInCategory="2"
+                android:title="Stop Service">
+        </item>
+    </group>
+</menu>

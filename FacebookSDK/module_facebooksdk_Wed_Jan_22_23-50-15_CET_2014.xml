@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_facebooksdk" default="compile.module.facebooksdk">
+  <dirname property="module.facebooksdk.basedir" file="${ant.file.module_facebooksdk}"/>
+  
+  <property name="module.jdk.home.facebooksdk" value="${jdk.home.android_2.3.3_platform}"/>
+  <property name="module.jdk.bin.facebooksdk" value="${jdk.bin.android_2.3.3_platform}"/>
+  <property name="module.jdk.classpath.facebooksdk" value="jdk.classpath.android_2.3.3_platform"/>
+  
+  <property name="compiler.args.facebooksdk" value="${compiler.args}"/>
+  
+  <property name="facebooksdk.output.dir" value="${module.facebooksdk.basedir}/bin/classes"/>
+  <property name="facebooksdk.testoutput.dir" value="${module.facebooksdk.basedir}/bin/classes"/>
+  
+  <path id="facebooksdk.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="facebooksdk.module.production.classpath">
+    <path refid="${module.jdk.classpath.facebooksdk}"/>
+    <pathelement location="${basedir}/FacebookSDK/libs/android-support-v4.jar"/>
+  </path>
+  
+  <path id="facebooksdk.runtime.production.module.classpath">
+    <pathelement location="${facebooksdk.output.dir}"/>
+    <pathelement location="${basedir}/FacebookSDK/libs/android-support-v4.jar"/>
+  </path>
+  
+  <path id="facebooksdk.module.classpath">
+    <pathelement location="${facebooksdk.output.dir}"/>
+    <path refid="${module.jdk.classpath.facebooksdk}"/>
+    <pathelement location="${basedir}/FacebookSDK/libs/android-support-v4.jar"/>
+  </path>
+  
+  <path id="facebooksdk.runtime.module.classpath">
+    <pathelement location="${facebooksdk.output.dir}"/>
+    <pathelement location="${basedir}/FacebookSDK/libs/android-support-v4.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.facebooksdk">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.facebooksdk">
+    <patternset refid="excluded.from.module.facebooksdk"/>
+  </patternset>
+  
+  <path id="facebooksdk.module.sourcepath">
+    <dirset dir="${module.facebooksdk.basedir}">
+      <include name="src"/>
+      <include name="gen"/>
+      <include name="res"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.facebooksdk" depends="compile.module.facebooksdk.production,compile.module.facebooksdk.tests" description="Compile module FacebookSDK"/>
+  
+  <target name="compile.module.facebooksdk.production" depends="register.custom.compilers" description="Compile module FacebookSDK; production classes">
+    <mkdir dir="${facebooksdk.output.dir}"/>
+    <javac2 destdir="${facebooksdk.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.facebooksdk}/javac">
+      <compilerarg line="${compiler.args.facebooksdk}"/>
+      <bootclasspath refid="facebooksdk.module.bootclasspath"/>
+      <classpath refid="facebooksdk.module.production.classpath"/>
+      <src refid="facebooksdk.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.facebooksdk"/>
+    </javac2>
+    
+    <copy todir="${facebooksdk.output.dir}">
+      <fileset dir="${module.facebooksdk.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.facebooksdk.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.facebooksdk.basedir}/res">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.facebooksdk.tests" depends="register.custom.compilers,compile.module.facebooksdk.production" description="compile module FacebookSDK; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.facebooksdk" description="cleanup module">
+    <delete dir="${facebooksdk.output.dir}"/>
+    <delete dir="${facebooksdk.testoutput.dir}"/>
+  </target>
+</project>

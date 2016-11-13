@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="apk" build-on-make="true" name="Carpooling_signed">
+    <output-path>$PROJECT_DIR$/Carpooling</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="includeSystemProGuardCfgFile" value="true" />
+        <option name="keyAlias" value="carpooling" />
+        <option name="keyPassword" value="Y2FycG9vbGluZw==" />
+        <option name="keyStorePassword" value="cmVsZWFzZQ==" />
+        <option name="keyStoreUrl" value="file://$APPLICATION_HOME_DIR$/bin/release.keystore" />
+        <option name="proGuardCfgFileUrl" value="file://$PROJECT_DIR$/Carpooling/proguard-project.txt" />
+        <option name="signingMode" value="DEBUG" />
+      </options>
+    </properties>
+    <root id="archive" name="Carpooling_signed.apk">
+      <element id="android-final-package" facet="Carpooling/android/Android" />
+    </root>
+  </artifact>
+</component>
